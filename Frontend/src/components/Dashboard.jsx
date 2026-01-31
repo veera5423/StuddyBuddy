@@ -17,7 +17,7 @@ const Dashboard = () => {
         const userData = JSON.parse(localStorage.getItem('user'));
         setUser(userData);
 
-        const response = await axios.get('http://localhost:5000/api/subjects', {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/subjects`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setSubjects(response.data);

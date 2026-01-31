@@ -28,9 +28,9 @@ const AdminDashboard = () => {
       const headers = { Authorization: `Bearer ${token}` };
 
       const [analyticsRes, usersRes, subjectsRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/admin/analytics', { headers }),
-        axios.get('http://localhost:5000/api/admin/users', { headers }),
-        axios.get('http://localhost:5000/api/subjects', { headers })
+        axios.get(`${import.meta.env.VITE_API_URL}/admin/analytics`, { headers }),
+        axios.get(`${import.meta.env.VITE_API_URL}/admin/users`, { headers }),
+        axios.get(`${import.meta.env.VITE_API_URL}/subjects`, { headers })
       ]);
 
       setAnalytics(analyticsRes.data);
@@ -51,7 +51,7 @@ const AdminDashboard = () => {
   const handleVerifyUser = async (userId) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/admin/users/${userId}/verify`, {}, {
+      await axios.put(`${import.meta.env.VITE_API_URL}/admin/users/${userId}/verify`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       toast.success('User verified successfully');
@@ -66,7 +66,7 @@ const AdminDashboard = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/admin/users/${userId}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/admin/users/${userId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       toast.success('User deleted successfully');
@@ -86,7 +86,7 @@ const AdminDashboard = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/subjects', newSubject, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/subjects`, newSubject, {
         headers: { Authorization: `Bearer ${token}` }
       });
       toast.success('Subject added successfully');
@@ -104,7 +104,7 @@ const AdminDashboard = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/admin/subjects/${subjectId}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/admin/subjects/${subjectId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       toast.success('Subject deleted successfully');
@@ -135,7 +135,7 @@ const AdminDashboard = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.post(`http://localhost:5000/api/subjects/${uploadData.subjectId}/materials`, formData, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/subjects/${uploadData.subjectId}/materials`, formData, {
         headers: { 
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'

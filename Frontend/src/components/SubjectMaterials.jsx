@@ -18,10 +18,10 @@ const SubjectMaterials = () => {
         const token = localStorage.getItem('token');
         
         const [materialsResponse, subjectsResponse] = await Promise.all([
-          axios.get(`http://localhost:5000/api/subjects/${subjectId}/materials`, {
+          axios.get(`${import.meta.env.VITE_API_URL}/subjects/${subjectId}/materials`, {
             headers: { Authorization: `Bearer ${token}` }
           }),
-          axios.get('http://localhost:5000/api/subjects', {
+          axios.get(`${import.meta.env.VITE_API_URL}/subjects`, {
             headers: { Authorization: `Bearer ${token}` }
           })
         ]);
@@ -47,7 +47,7 @@ const SubjectMaterials = () => {
   const handleDownload = async (materialId, fileName) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get(`http://localhost:5000/api/subjects/materials/${materialId}/download`, {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/subjects/materials/${materialId}/download`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
