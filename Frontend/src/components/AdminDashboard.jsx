@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import { FaUsers, FaBook, FaFileAlt, FaDownload, FaPlus, FaTrash } from 'react-icons/fa';
@@ -166,7 +166,14 @@ const AdminDashboard = () => {
   return (
     <div className="admin-dashboard">
       <header className="admin-header">
-        <h1>Admin Dashboard</h1>
+        <div className="header-content">
+          <h1>Admin Dashboard</h1>
+          <nav className="header-nav">
+            <Link to="/dashboard">Back to Dashboard</Link>
+            <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
+          </nav>
+        </div>
         <button onClick={handleLogout} className="logout-btn">Logout</button>
       </header>
 

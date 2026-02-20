@@ -1,10 +1,10 @@
 .subject-materials {
   min-height: 100vh;
-  background: #f5f5f5;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
 }
 
 .materials-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   color: white;
   padding: 1rem 2rem;
   display: flex;
@@ -131,4 +131,54 @@
   height: 100vh;
   font-size: 1.5rem;
   color: #666;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .subject-materials {
+    padding: 1rem;
+  }
+  
+  .materials-header {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .materials-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .materials-content {
+    padding: 1rem 0;
+  }
+  
+  .materials-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .material-card {
+    padding: 1rem;
+  }
+  
+  .material-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .material-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .materials-header h1 {
+    font-size: 1.3rem;
+  }
+  
+  .material-card {
+    padding: 0.8rem;
+  }
 }

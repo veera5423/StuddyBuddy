@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   padding: 20px;
 }
 
@@ -44,13 +44,13 @@
 
 .form-group input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #10b981;
 }
 
 button {
   width: 100%;
   padding: 0.75rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   color: white;
   border: none;
   border-radius: 5px;
@@ -75,10 +75,48 @@ button:disabled {
 }
 
 .auth-card a {
-  color: #667eea;
+  color: #10b981;
   text-decoration: none;
 }
 
 .auth-card a:hover {
   text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 10px;
+  }
+  
+  .auth-card {
+    padding: 1.5rem;
+    margin: 10px;
+    border-radius: 8px;
+  }
+  
+  .auth-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .form-group input {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+  
+  button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 1rem;
+  }
+  
+  .auth-card h2 {
+    font-size: 1.3rem;
+  }
 }
