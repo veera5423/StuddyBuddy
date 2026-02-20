@@ -23,7 +23,7 @@ const Footer = () => {
           <h4>Support</h4>
           <ul>
             <li><a href="mailto:support@studybuddy.com">karthikstuddybuddy@gmail.com</a></li>
-            <li><a href="tel:+1234567890">+91 </a></li>
+            <li><a href="tel:+91 6309792090">+91 6309792090</a></li>
           </ul>
         </div>
         

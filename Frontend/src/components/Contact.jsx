@@ -69,7 +69,7 @@ const Contact = () => {
                   <div className="info-icon">📞</div>
                   <div>
                     <h3>Phone</h3>
-                    <p>+91 </p>
+                    <p>+91 6309792090</p>
                   </div>
                 </div>
                 <div className="info-item">
