@@ -60,11 +60,11 @@ const PDFViewer = () => {
   };
 
   const goToPrevPage = () => {
-    setPageNumber(pageNumber - 1);
+    setPageNumber(prev => Math.max(1, prev - 1));
   };
 
   const goToNextPage = () => {
-    setPageNumber(pageNumber + 1);
+    setPageNumber(prev => Math.min(numPages, prev + 1));
   };
 
   if (loading) {
@@ -97,9 +97,10 @@ const PDFViewer = () => {
             
             <div className="pdf-controls">
               <button 
-                onClick={goToPrevPage} 
+                onClick={goToPrevPage}
                 disabled={pageNumber <= 1}
                 className="nav-btn"
+                type="button"
               >
                 Previous
               </button>
@@ -107,9 +108,10 @@ const PDFViewer = () => {
                 Page {pageNumber} of {numPages}
               </span>
               <button 
-                onClick={goToNextPage} 
+                onClick={goToNextPage}
                 disabled={pageNumber >= numPages}
                 className="nav-btn"
+                type="button"
               >
                 Next
               </button>
