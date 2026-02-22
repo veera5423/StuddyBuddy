@@ -70,8 +70,8 @@ const About = () => {
             <h2>Meet Our Team</h2>
             <div className="team-grid">
               <div className="team-member">
-                {/* <div className="member-avatar">👨‍💻</div> */}
-                <div className="member-avatar"><img src="vite.svg" alt="karthik" /></div>
+                <div className="member-avatar">👨‍💻</div>
+                {/* <div className="member-avatar"><img src="vite.svg" alt="karthik" /></div> */}
                 <h3>Pasam.Karthik Reddy</h3>
                 <p>Founder & CEO</p>
                 <p>Passionate about education technology and student success.</p>
