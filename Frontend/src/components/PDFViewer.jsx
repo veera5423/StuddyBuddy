@@ -24,7 +24,7 @@ const PDFViewer = () => {
     const fetchMaterial = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get(`${process.env.VITE_API_URL}/api/subjects/materials/${materialId}/download`, {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/subjects/materials/${materialId}/download`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setPdfUrl(response.data.downloadUrl);
